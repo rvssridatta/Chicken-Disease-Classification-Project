@@ -12,13 +12,21 @@ class DataIngestion:
         self.config = config
 
     def download_file(self):
-        # print(self.config.source_URL)
+        # # print(self.config.source_URL)
+        # import requests
+
+        # url = self.config.source_URL
+        # response = requests.get(url, timeout=50)
+
+        # with open('file.txt', 'wb') as f:
+        #     f.write(response.content)
         if not os.path.exists(self.config.local_data_file):
-            filename, headers = request.urlretrieve(
-                url = self.config.source_URL,
-                filename = self.config.local_data_file
-            )
-            logger.info(f"{filename} download! with the following info: \n{headers}")
+            pass
+            # filename, headers = request.urlretrieve(
+            #     url = self.config.source_URL,
+            #     filename = self.config.local_data_file,
+            # )
+            # logger.info(f"{filename} download! with the following info: \n{headers}")
         else:
             logger.info(f"File already exists of size: {get_size(Path(self.config.local_data_file))}")
 
